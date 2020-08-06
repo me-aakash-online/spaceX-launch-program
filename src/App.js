@@ -38,6 +38,21 @@ const reducer = (state, action) => {
 function App() {
     const [filters, dispatch] = React.useReducer(reducer, initialState);
 
+    const handleUpdateYearsCallback = React.useCallback(
+        (year) => handleUpdateYears(year),
+        []
+    );
+
+    const handleUpdateSuccessLaunchCallback = React.useCallback(
+        (successLaunch) => handleUpdateSuccessLaunch(successLaunch),
+        []
+    );
+
+    const handleUpdateSuccessLandCallback = React.useCallback(
+        (successLand) => handleUpdateSuccessLand(successLand),
+        []
+    );
+
     const handleUpdateYears = (year) => {
         dispatch({
             type: 'UPDATE_YEARS',
@@ -72,9 +87,9 @@ function App() {
             </header>
             <section className="page-content">
                 <Filters
-                    updateYears={handleUpdateYears}
-                    updateSuccessLaunch={handleUpdateSuccessLaunch}
-                    updateSuccessLand={handleUpdateSuccessLand}
+                    updateYears={handleUpdateYearsCallback}
+                    updateSuccessLaunch={handleUpdateSuccessLaunchCallback}
+                    updateSuccessLand={handleUpdateSuccessLandCallback}
                 />
                 <LaunchList filters={filters} />
             </section>

@@ -27,4 +27,4 @@ const Filters = ({ updateYears, updateSuccessLaunch, updateSuccessLand }) => {
     );
 };
 
-export default Filters;
+export default React.memo(Filters);
