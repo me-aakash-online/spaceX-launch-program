@@ -11,6 +11,8 @@ A responsive React app to provide stats on SpaceX Launches Programmes
 
 ## Reports
 
+![Report](config/lighthouse-report.png)
+
 ## Todos
 
 -   [ ] Improve Lighthose Performance Metric by Virualizing List of Initial Render Items.
