@@ -1,0 +1,115 @@
+@import '../../globals/styles/base';
+
+$text-color: rgb(58, 68, 158);
+
+%launch-info-text {
+    color: $text-color;
+    font-size: 1.1rem;
+    font-weight: lighter;
+
+    @include md {
+        font-size: 0.75rem;
+    }
+
+    @include lg {
+        font-size: 0.5rem;
+    }
+}
+
+.launch-list-wrapper {
+
+    @include md {}
+
+    .launch-list {
+        margin: 0.5rem;
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include md {
+            margin-top: 0.5rem;
+            grid-template-columns: repeat(2, minmax(auto, 1fr));
+        }
+
+        @include lg {
+            grid-template-columns: repeat(4, minmax(auto, 1fr));
+        }
+
+        &__item {
+            border-radius: 0.5rem;
+            justify-self: stretch;
+            background-color: #FFFFFF;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                width: auto;
+                padding: 1.2rem
+            }
+
+            &__avatar {
+                width: 100%;
+                background-color: lightgray;
+
+                @include md {}
+
+                @include lg {}
+            }
+
+            &__title {
+                margin: 1rem 0 1rem 0;
+                font-weight: bold;
+                @extend %launch-info-text;
+            }
+
+            &__subtitle {
+                margin: 0.5em 0 0.5rem 0;
+                display: flex;
+                align-items: center;
+
+                >* {
+                    display: inline-block;
+                }
+
+                >.subtitle__header {
+                    width: 60%;
+                    font-size: 1rem;
+
+                    @include md {
+                        font-size: 0.75rem;
+                    }
+
+                    @include lg {
+                        font-size: 0.65rem;
+                    }
+                }
+
+                >.subtitle__text {
+                    @extend %launch-info-text;
+                }
+            }
+
+            &__list {
+                >.subtitle__header {
+                    width: 60%;
+                    font-size: 1rem;
+
+                    @include md {
+                        font-size: 0.75rem;
+                    }
+
+                    @include lg {
+                        font-size: 0.65rem;
+                    }
+                }
+
+                >.subtitle_list {
+                    padding-left: 2rem;
+                    @extend %launch-info-text;
+                }
+            }
+        }
+    }
+}

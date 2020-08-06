@@ -1,0 +1,43 @@
+@import 'globals/styles/base';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    background-color: $clear-bg-color;
+
+    body {
+        width: 100vw;
+        min-height: 100vh;
+        font-size: 16px;
+        padding: 0.5rem;
+        font-family: Tahoma, Geneva, sans-serif;
+        scroll-behavior: smooth;
+        background-color: $bg-color;
+
+        #root {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @include md {
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+
+    @include xl {
+        font-size: 24px;
+
+        body {
+            max-width: $screen-desktop-max;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import './globals/styles/base';
+
+.page-title {
+    padding: 0.5rem;
+
+    &__text {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+.page-content {
+    @include md {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    @include lg {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+}
+
+.filler {
+    flex: 1 1 auto;
+}
+
+.page-footer {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+
+    &__text {
+        font-weight: bold;
+
+        @include md {
+            display: inline;
+        }
+    }
+
+    &__name {
+        font-size: 1.4rem;
+        font-weight: lighter;
+
+        @include md {
+            display: inline;
+            padding-left: 1rem;
+        }
+    }
+}
